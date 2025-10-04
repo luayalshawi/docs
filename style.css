@@ -1,0 +1,70 @@
+/* Apply RTL direction globally when body has .rtl class or dir="rtl" */
+html[dir="rtl"],
+body.rtl {
+  direction: rtl;
+  unicode-bidi: embed;
+  text-align: right;
+}
+
+/* Headings and paragraphs */
+html[dir="rtl"] h1,
+html[dir="rtl"] h2,
+html[dir="rtl"] h3,
+html[dir="rtl"] h4,
+html[dir="rtl"] h5,
+html[dir="rtl"] h6,
+html[dir="rtl"] p,
+html[dir="rtl"] li {
+  text-align: right;
+}
+
+/* Lists */
+html[dir="rtl"] ul,
+html[dir="rtl"] ol {
+  margin-right: 1.5em;
+  margin-left: 0;
+  padding-right: 1.5em;
+  padding-left: 0;
+}
+
+/* Code blocks and preformatted text */
+html[dir="rtl"] pre,
+html[dir="rtl"] code {
+  direction: ltr; /* Keep code LTR for readability */
+  text-align: left;
+}
+
+/* Tables */
+html[dir="rtl"] table {
+  direction: rtl;
+}
+html[dir="rtl"] th,
+html[dir="rtl"] td {
+  text-align: right;
+}
+
+/* Blockquotes */
+html[dir="rtl"] blockquote {
+  border-right: 4px solid #ccc;
+  border-left: none;
+  padding-right: 1em;
+  padding-left: 0;
+  margin-right: 0;
+  margin-left: 1em;
+}
+
+/* Inline logical spacing */
+html[dir="rtl"] img,
+html[dir="rtl"] video,
+html[dir="rtl"] iframe {
+  margin-inline-start: 0;
+  margin-inline-end: auto;
+}
+
+/* Navigation arrows */
+html[dir="rtl"] .nav-prev::before {
+  content: "→"; /* flips direction */
+}
+html[dir="rtl"] .nav-next::after {
+  content: "←";
+}
